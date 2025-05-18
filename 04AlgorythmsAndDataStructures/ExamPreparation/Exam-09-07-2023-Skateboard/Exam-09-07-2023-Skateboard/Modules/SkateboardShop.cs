@@ -54,32 +54,27 @@ namespace Exam_09_07_2023_Skateboard.Modules
 
         public double AveragePriceInRange(double start, double end)
         {
-            //TODO: Добавете вашия код тук …
-            throw new NotImplementedException();
+            return skateboards.Where(x => x.Price >= start && x.Price <= end).Average(x => x.Price);
         }
 
         public List<string> FilterSkateboardsByPrice(double price)
         {
-            //TODO: Добавете вашия код тук …
-            throw new NotImplementedException();
+            return skateboards.Where(x => x.Price < price).Select(x => x.Model).ToList();
         }
 
         public List<Skateboard> SortAscendingByModel()
         {
-            //TODO: Добавете вашия код тук …
-            throw new NotImplementedException();
+            return skateboards.OrderBy(x => x.Model).ToList();
         }
 
         public List<Skateboard> SortDescendingByPrice()
         {
-            //TODO: Добавете вашия код тук …
-            throw new NotImplementedException();
+            return skateboards.OrderByDescending(x => x.Price).ToList();
         }
 
         public bool CheckSkateboardIsInShop(string model)
         {
-            //TODO: Добавете вашия код тук …
-            throw new NotImplementedException();
+            return skateboards.Any(x => x.Model == model);
         }
 
         public string[] ProvideInformationAboutAllSkateboards()
